@@ -4,4 +4,5 @@
     <string name="button_message">আমি বোতাম</string>
     <string name="editMessage">আমি একটি EditText</string>
     <string name="hintText">এখানে কিছু লিখুন</string>
+    <string name="coffeeQuestion">আপনি কি কফি খান?</string>
 </resources>

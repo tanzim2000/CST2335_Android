@@ -4,4 +4,5 @@
     <string name="button_message">Je suis un bouton</string>
     <string name="editMessage">Je suis un EditText</string>
     <string name="hintText">écrire quelque chose ici</string>
+    <string name="coffeeQuestion">Bois-tu du café?</string>
 </resources>
