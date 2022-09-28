@@ -2,4 +2,6 @@
 <resources>
     <string name="hello_message">হ্যালো দুনিয়া!</string>
     <string name="button_message">আমি বোতাম</string>
+    <string name="editMessage">আমি একটি EditText</string>
+    <string name="hintText">এখানে কিছু লিখুন</string>
 </resources>
