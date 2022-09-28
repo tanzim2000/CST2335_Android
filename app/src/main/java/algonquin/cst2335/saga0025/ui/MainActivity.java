@@ -19,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
         variableBinding = ActivityMainBinding.inflate(getLayoutInflater());
 
         setContentView(variableBinding.getRoot());
-        variableBinding.textView.setText(model.editString.toString());
-        variableBinding.myButton.setOnClickListener(click -> model.editString.postValue(variableBinding.textView.getText().toString()));
+        variableBinding.myButton.setOnClickListener(click -> model.editString.postValue(variableBinding.myEditText.getText().toString()));
         model.editString.observe(this, s -> variableBinding.textView.setText("Your edit text has "+ s));
         model.isSelected.observe(this, selected -> {
             variableBinding.checkBox.setChecked(selected);
