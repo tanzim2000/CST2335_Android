@@ -2,4 +2,8 @@
 <resources>
     <string name="hello_message">হ্যালো দুনিয়া!</string>
     <string name="button_message">আমি বোতাম</string>
+    <string name="button1">বোতাম ১</string>
+    <string name="button2">বোতাম ২</string>
+    <string name="button3">বোতাম ৩</string>
+    <string name="spin_message">পতাকা ঘুরান</string>
 </resources>

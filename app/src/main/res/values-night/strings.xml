@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Tanzim\'s Android Lab</string>
-    <string name="hello_message">Hello world!</string>
-    <string name="button_message">I\'m a button</string>
     <string name="spin_message">Spin flag</string>
     <string name="button1">Button 1</string>
     <string name="button2">Button 2</string>
