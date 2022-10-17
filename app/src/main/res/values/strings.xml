@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">Tanzim\'s Android Lab</string>
-    <string name="hello_message">Hello world!</string>
-    <string name="button_message">I\'m a button</string>
+    <string name="emailTitlePrompt">Enter Your email here:</string>
+    <string name="emailTextBoxPrompt">Type email here</string>
+    <string name="passwordPrompt">Type your password:</string>
+    <string name="loginBtn">Login</string>
+    <string name="callBtn">Call Number</string>
+    <string name="pictureChangeBtn">Change Picture</string>
 </resources>
