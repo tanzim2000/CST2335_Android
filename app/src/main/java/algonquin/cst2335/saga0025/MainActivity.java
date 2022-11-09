@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             String password = passwordField.getText().toString();
             if(!checkPasswordComplexity(password)) {
                 title.setText("You shall not pass!");
+            } else {
+                title.setText("Your password is complex enough");
             }
         });
     }
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         boolean foundUpperCase, foundLowerCase, foundNumber, foundSpecial;
         foundUpperCase = foundLowerCase = foundNumber = foundSpecial = false;
 
-        Toast noUpperCaseToast = Toast.makeText(getApplicationContext(), "Your password does not have an upper case letter", Toast.LENGTH_LONG);
+        Toast noUpperCaseToast = Toast.makeText(getApplicationContext(), "Your password does not have an upper case letter", Toast.LENGTH_SHORT);
         Toast noLowerCaseToast = Toast.makeText(getApplicationContext(), "Your password does not have an lower case letter", Toast.LENGTH_LONG);
         Toast noNumberToast = Toast.makeText(getApplicationContext(), "Your password does not have any numbers", Toast.LENGTH_LONG);
         Toast noSpecialCharToast = Toast.makeText(getApplicationContext(), "Your password does not have any special char (#$%^&*!@?)", Toast.LENGTH_LONG);

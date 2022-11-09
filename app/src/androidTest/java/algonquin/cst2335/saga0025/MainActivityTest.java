@@ -37,10 +37,10 @@ public class MainActivityTest {
             new ActivityScenarioRule<>(MainActivity.class);
 
     /**
-     * testing if the textview is changing
+     * testing if the textview is changing to "You shall not pass!"
      */
     @Test
-    public void mainActivityTest() {
+    public void testComplexityDisavowal() {
         ViewInteraction appCompatEditText = onView(withId(R.id.passwordField));
         appCompatEditText.perform(replaceText("12345"), closeSoftKeyboard());
 
@@ -49,6 +49,20 @@ public class MainActivityTest {
 
         ViewInteraction textView = onView(withId(R.id.titleText));
         textView.check(matches(withText("You shall not pass!")));
+    }
+    /**
+     * testing if the textview is changing to "You shall not pass!"
+     */
+    @Test
+    public void testComplexityConfirmation() {
+        ViewInteraction appCompatEditText = onView(withId(R.id.passwordField));
+        appCompatEditText.perform(replaceText("passWORD123#$*"), closeSoftKeyboard());
+
+        ViewInteraction materialButton = onView(withId(R.id.loginBtn));
+        materialButton.perform(click());
+
+        ViewInteraction textView = onView(withId(R.id.titleText));
+        textView.check(matches(withText("Your password is complex enough")));
     }
     /**
      * testing if the app can recognise the absence of upper case
@@ -94,7 +108,7 @@ public class MainActivityTest {
         //find the view s
         ViewInteraction appCompatEditText = onView( withId(R.id.passwordField) );
         //type in password123#$*
-        appCompatEditText.perform(replaceText("password#$*"));
+        appCompatEditText.perform(replaceText("passWORD#%$"));
         //find the button
         ViewInteraction materialButton = onView(withId(R.id.loginBtn));
         //Click the button
