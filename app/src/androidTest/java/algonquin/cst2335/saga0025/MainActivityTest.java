@@ -51,7 +51,7 @@ public class MainActivityTest {
         textView.check(matches(withText("You shall not pass!")));
     }
     /**
-     * testing if the textview is changing to "You shall not pass!"
+     * testing if the textview is changing to "Your password is complex enough"
      */
     @Test
     public void testComplexityConfirmation() {
