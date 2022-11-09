@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello_message">Bonjour tout le monde!</string>
-    <string name="button_message">Je suis un bouton</string>
+    <string name="button_message">Connexion</string>
+    <string name="title">Tapez votre mot de passe:</string>
 </resources>

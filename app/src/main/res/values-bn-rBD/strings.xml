@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello_message">হ্যালো দুনিয়া!</string>
-    <string name="button_message">আমি বোতাম</string>
+    <string name="button_message">লগইন</string>
+    <string name="title">পাসওয়ার্ড লিখুন:</string>
 </resources>
