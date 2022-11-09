@@ -68,6 +68,60 @@ public class MainActivityTest {
         //check the text
         textView.check(matches(withText("You shall not pass!")));
     }
+    /**
+     * testing if the app can recognise the absence of lower case
+     */
+    @Test
+    public void testFindMissingLowerCase() {
+        //find the view s
+        ViewInteraction appCompatEditText = onView( withId(R.id.passwordField) );
+        //type in password123#$*
+        appCompatEditText.perform(replaceText("PASSWORD123#$*"));
+        //find the button
+        ViewInteraction materialButton = onView(withId(R.id.loginBtn));
+        //Click the button
+        materialButton.perform(click());
+        //find the text view
+        ViewInteraction textView = onView( withId(R.id.titleText) );
+        //check the text
+        textView.check(matches(withText("You shall not pass!")));
+    }
+    /**
+     * testing if the app can recognise the absence of number
+     */
+    @Test
+    public void testFindMissingNumber() {
+        //find the view s
+        ViewInteraction appCompatEditText = onView( withId(R.id.passwordField) );
+        //type in password123#$*
+        appCompatEditText.perform(replaceText("password#$*"));
+        //find the button
+        ViewInteraction materialButton = onView(withId(R.id.loginBtn));
+        //Click the button
+        materialButton.perform(click());
+        //find the text view
+        ViewInteraction textView = onView( withId(R.id.titleText) );
+        //check the text
+        textView.check(matches(withText("You shall not pass!")));
+    }
+    /**
+     * testing if the app can recognise the absence of upper case
+     */
+    @Test
+    public void testFindMissingSpecialChar() {
+        //find the view s
+        ViewInteraction appCompatEditText = onView( withId(R.id.passwordField) );
+        //type in password123#$*
+        appCompatEditText.perform(replaceText("passWORD123"));
+        //find the button
+        ViewInteraction materialButton = onView(withId(R.id.loginBtn));
+        //Click the button
+        materialButton.perform(click());
+        //find the text view
+        ViewInteraction textView = onView( withId(R.id.titleText) );
+        //check the text
+        textView.check(matches(withText("You shall not pass!")));
+    }
 
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
