@@ -9,8 +9,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="690dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,23 +19,24 @@
 
     <Button
         android:id="@+id/sendButton"
-        android:layout_width="93dp"
-        android:layout_height="46dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/sendButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textInput" />
 
     <EditText
         android:id="@+id/textInput"
-        android:layout_width="203dp"
-        android:layout_height="48dp"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="Type Anything"
         android:ems="10"
         android:hint="Type your text here"
-        android:inputType="textPersonName"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/receiveButton"
-        app:layout_constraintStart_toEndOf="@+id/sendButton"
-        android:autofillHints="Type Anything" />
+        app:layout_constraintStart_toEndOf="@+id/sendButton" />
 
     <Button
         android:id="@+id/receiveButton"
@@ -43,6 +44,7 @@
         android:layout_height="wrap_content"
         android:text="@string/receiveButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
