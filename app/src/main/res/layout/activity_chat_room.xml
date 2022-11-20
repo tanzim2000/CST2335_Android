@@ -8,8 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="690dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
@@ -21,7 +21,7 @@
         android:id="@+id/sendButton"
         android:layout_width="93dp"
         android:layout_height="46dp"
-        android:text="Send"
+        android:text="@string/sendButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -30,16 +30,18 @@
         android:layout_width="203dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:hint="Type your text here"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/receiveButton"
-        app:layout_constraintStart_toEndOf="@+id/sendButton" />
+        app:layout_constraintStart_toEndOf="@+id/sendButton"
+        android:autofillHints="Type Anything" />
 
     <Button
         android:id="@+id/receiveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Receive"
+        android:text="@string/receiveButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

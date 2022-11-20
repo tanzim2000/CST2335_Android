@@ -1,4 +1,4 @@
-package algonquin.cst2335.saga0025.data;
+package algonquin.cst2335.saga0025;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
