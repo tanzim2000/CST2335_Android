@@ -46,22 +46,26 @@ public class ChatRoom extends AppCompatActivity {
         MessageDatabase db = Room.databaseBuilder(getApplicationContext(), MessageDatabase.class, "MessageDatabase").fallbackToDestructiveMigration().build();
         mDAO = db.cmDAO();
 
+        //Data kept in a viewModel so that the data survives screen rotation
+        chatModel = new ViewModelProvider(this).get(ChatRoomViewModel.class);
+
+        if (messages == null) {
+            messages = chatModel.messages.getValue();
+        }
         //Running the database query in the separated thread
-        if(messages == null)
+        if(true)
         {
-            chatModel.messages.setValue(messages = new ArrayList<>());
             //Creating a separate thread
             Executor thread = Executors.newSingleThreadExecutor();
-            thread.execute(() ->
-            {
-                messages.addAll( mDAO.getAllMessages() ); //Once you get the data from database
+            thread.execute(() -> {
+                messages.addAll(mDAO.getAllMessages()); //Once you get the data from database
+            });
+            runOnUiThread(() ->  {
                 binding.recyclerView.setAdapter( adt ); //You can then load the RecyclerView
             });
         }
 
-        //Data kept in a viewModel so that the data survives screen rotation
-        chatModel = new ViewModelProvider(this).get(ChatRoomViewModel.class);
-        messages = chatModel.messages.getValue();
+
         //verify if the chatModel.messages variable has never been set before
         //The first time you come to the ChatRoom class you will have to initialize the ChatModel class
         if(messages == null)

@@ -20,6 +20,7 @@ public class ChatMessage {
      */
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "Id")
     public int id;
     @ColumnInfo(name = "Message")
     private String message;
