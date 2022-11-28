@@ -3,6 +3,8 @@ package algonquin.cst2335.saga0025;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -65,7 +67,13 @@ public class ChatRoom extends AppCompatActivity {
             });
         }
 
-
+        chatModel.selectedMessage.observe(this, (newMessageValue) -> {
+            MessageDetailsFragment chatFragment = new MessageDetailsFragment(newMessageValue);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragmentLocation, chatFragment)
+                    .commit();// This line actually loads the fragment into the specified FrameLayout
+        });
         //verify if the chatModel.messages variable has never been set before
         //The first time you come to the ChatRoom class you will have to initialize the ChatModel class
         if(messages == null)
@@ -144,7 +152,11 @@ public class ChatRoom extends AppCompatActivity {
             super(itemView);
 
             itemView.setOnClickListener(clk ->{
-                int position = getAbsoluteAdapterPosition(); //telling which row (position) this row is currently in the adapter object
+                int position = getAbsoluteAdapterPosition();
+                ChatMessage selected = messages.get(position);
+
+                chatModel.selectedMessage.postValue(selected);
+                /*int position = getAbsoluteAdapterPosition(); //telling which row (position) this row is currently in the adapter object
                 //Making an Alert Box
                 AlertDialog.Builder builder = new AlertDialog.Builder(ChatRoom.this);
                 builder.setMessage("Do you want to delete the message: " + messageText.getText())
@@ -159,7 +171,7 @@ public class ChatRoom extends AppCompatActivity {
                                 messages.add(position,removeMessage);
                                 adt.notifyItemInserted(position);
                             }).show();
-                        })).create().show();
+                        })).create().show();*/
             });
             messageText = itemView.findViewById(R.id.messageText);
             timeText = itemView.findViewById(R.id.timeText);
