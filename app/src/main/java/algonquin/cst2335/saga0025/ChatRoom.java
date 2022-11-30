@@ -55,8 +55,6 @@ public class ChatRoom extends AppCompatActivity {
             messages = chatModel.messages.getValue();
         }
         //Running the database query in the separated thread
-        if(true)
-        {
             //Creating a separate thread
             Executor thread = Executors.newSingleThreadExecutor();
             thread.execute(() -> {
@@ -65,7 +63,6 @@ public class ChatRoom extends AppCompatActivity {
             runOnUiThread(() ->  {
                 binding.recyclerView.setAdapter( adt ); //You can then load the RecyclerView
             });
-        }
 
         chatModel.selectedMessage.observe(this, (newMessageValue) -> {
             MessageDetailsFragment chatFragment = new MessageDetailsFragment(newMessageValue);

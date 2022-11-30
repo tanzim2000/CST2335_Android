@@ -4,4 +4,5 @@
     <string name="button_message">I\'m a button</string>
     <string name="sendButtonText">Send</string>
     <string name="receiveButtonText">Receive</string>
+    <string name="message">Message goes here</string>
 </resources>

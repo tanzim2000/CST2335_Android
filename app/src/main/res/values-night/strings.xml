@@ -2,4 +2,5 @@
 <resources>
     <string name="sendButtonText">Send</string>
     <string name="receiveButtonText">Receive</string>
+    <string name="message">Message goes here</string>
 </resources>
